@@ -1,0 +1,807 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Technica_Regular";
+  src: local("Technica_Regular"), url(../fonts/Technica_Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Technica_Semi_Bold";
+  src: local("Technica_Semi_Bold"), url(../fonts/Technica_Semi_Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Digital";
+  src: local("Digital"), url(../fonts/Digital.ttf) format("truetype");
+}
+@font-face {
+  font-family: "SedanSC_Regular";
+  src: local("SedanSC-Regular"), url(../fonts/SedanSC-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"), url(../fonts/Sora.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Khand";
+  src: local("Khand"), url(../fonts/Khand.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Honk";
+  src: local("Honk"), url(../fonts/Honk.ttf) format("truetype");
+}
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Technica_Regular;
+}
+
+button, input, select {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.flex, .theme-default .popup__content--form span, .theme-default .popup__content--form, .theme-default .popup__content--name, .theme-default .popup__content, .theme-default .frame__content--footer .game-status__item div, .theme-default .frame__content--footer .game-status__item, .theme-default .frame__content--footer .game-status, .theme-default .frame__content--footer .player-info div, .theme-default .frame__content--footer .player-info, .theme-default .frame__content--footer, .theme-default .frame__content--wrapper .btns, .theme-default .frame__content--wrapper .history ul li .round-info, .theme-default .frame__content--wrapper .history ul li .round-wrapper, .theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div, .theme-default .frame__content--wrapper .history ul li .game-info .game-status__item, .theme-default .frame__content--wrapper .history ul li .game-info .game-status, .theme-default .frame__content--wrapper .history ul li .game-info .player-info div, .theme-default .frame__content--wrapper .history ul li .game-info .player-info, .theme-default .frame__content--wrapper .history ul li .game-info, .theme-default .frame__content--wrapper .history, .theme-default .frame__content--wrapper, .theme-default {
+  display: flex;
+}
+.flex-jc-sb, .theme-default .frame__content--footer .game-status, .theme-default .frame__content--footer, .theme-default .frame__content--wrapper .history ul li .round-info, .theme-default .frame__content--wrapper .history ul li .game-info .game-status, .theme-default .frame__content--wrapper .history ul li .game-info {
+  justify-content: space-between;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c, .theme-default .popup__content--name, .theme-default .popup__content, .theme-default .frame__content--footer .game-status__item div, .theme-default .frame__content--footer .game-status, .theme-default .frame__content--footer .player-info, .theme-default .frame__content--wrapper .btns, .theme-default .frame__content--wrapper .history ul li .round-info, .theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div, .theme-default .frame__content--wrapper .history ul li .game-info .game-status, .theme-default .frame__content--wrapper .history ul li .game-info .player-info {
+  align-items: center;
+}
+.flex-ai-sb {
+  align-items: space-between;
+}
+.flex-ai-fs {
+  align-items: flex-start;
+}
+.flex-ai-fe {
+  align-items: flex-end;
+}
+.flex-column, .theme-default .popup__content--form span, .theme-default .popup__content--form, .theme-default .popup__content--name, .theme-default .popup__content, .theme-default .frame__content--footer .game-status__item div, .theme-default .frame__content--footer .player-info div, .theme-default .frame__content--wrapper .btns, .theme-default .frame__content--wrapper .history ul li .round-info, .theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div, .theme-default .frame__content--wrapper .history ul li .game-info .player-info div, .theme-default .frame__content--wrapper .history, .theme-default .frame__content--wrapper, .theme-default {
+  flex-direction: column;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+.container, .theme-default {
+  width: 100%;
+  height: 100%;
+}
+
+.full-width, .theme-default .popup__content--form span, .theme-default .popup__content--title, .theme-default .frame__content--wrapper .btns, .theme-default .frame__content--wrapper .history ul li .round-info, .theme-default .frame__content--wrapper .history ul li .round-wrapper, .theme-default .frame__content--wrapper .history ul li .game-info, .theme-default .frame__content--wrapper .history__title, .theme-default .frame__content--wrapper .grid, .theme-default h1 {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-size, .theme-default .popup__content--bg, .theme-default .frame__content--wrapper .history ul, .theme-default .frame__content--wrapper .history, .theme-default .frame__content--bg, .theme-default .frame, .theme-default .bg {
+  height: 100%;
+  width: 100%;
+}
+
+.font-family-bold, .theme-default .popup__content button, .theme-default .popup__content--form span input, .theme-default .popup__content--form span label, .theme-default .popup__content--title, .theme-default .frame__content--wrapper .btns button, .theme-default .frame__content--wrapper .history ul li .round-info span, .theme-default .frame__content--wrapper .history ul li.no-data, .theme-default .frame__content--wrapper .history__title {
+  font-family: Technica_Semi_Bold;
+}
+
+.font-family-digital {
+  font-family: Digital;
+}
+
+.bold, .theme-default .frame__content--footer .game-status__item div, .theme-default .frame__content--footer .player-info div, .theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div, .theme-default .frame__content--wrapper .history ul li .game-info .player-info div {
+  font-weight: 600;
+}
+
+.logo-font {
+  font-family: "SedanSC_Regular";
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    top: -500px;
+  }
+  100% {
+    opacity: 1;
+    top: -20px;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0.2;
+    right: -30px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes tada {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.2;
+  }
+  10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes jackInTheBox {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes showMonitor {
+  from {
+    bottom: -145px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7), 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  80% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 30px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 0 0 30px rgba(255, 255, 255, 0);
+  }
+}
+@keyframes noise-before {
+  0% {
+    clip: rect(61px, 9999px, 52px, 0);
+  }
+  5% {
+    clip: rect(33px, 9999px, 144px, 0);
+  }
+  10% {
+    clip: rect(121px, 9999px, 115px, 0);
+  }
+  15% {
+    clip: rect(144px, 9999px, 162px, 0);
+  }
+  20% {
+    clip: rect(62px, 9999px, 180px, 0);
+  }
+  25% {
+    clip: rect(34px, 9999px, 42px, 0);
+  }
+  30% {
+    clip: rect(147px, 9999px, 179px, 0);
+  }
+  35% {
+    clip: rect(99px, 9999px, 63px, 0);
+  }
+  40% {
+    clip: rect(188px, 9999px, 122px, 0);
+  }
+  45% {
+    clip: rect(154px, 9999px, 14px, 0);
+  }
+  50% {
+    clip: rect(63px, 9999px, 37px, 0);
+  }
+  55% {
+    clip: rect(161px, 9999px, 147px, 0);
+  }
+  60% {
+    clip: rect(109px, 9999px, 175px, 0);
+  }
+  65% {
+    clip: rect(157px, 9999px, 88px, 0);
+  }
+  70% {
+    clip: rect(173px, 9999px, 131px, 0);
+  }
+  75% {
+    clip: rect(62px, 9999px, 70px, 0);
+  }
+  80% {
+    clip: rect(24px, 9999px, 153px, 0);
+  }
+  85% {
+    clip: rect(138px, 9999px, 40px, 0);
+  }
+  90% {
+    clip: rect(79px, 9999px, 136px, 0);
+  }
+  95% {
+    clip: rect(25px, 9999px, 34px, 0);
+  }
+  100% {
+    clip: rect(173px, 9999px, 166px, 0);
+  }
+}
+@keyframes noise-after {
+  0% {
+    clip: rect(26px, 9999px, 33px, 0);
+  }
+  5% {
+    clip: rect(140px, 9999px, 198px, 0);
+  }
+  10% {
+    clip: rect(184px, 9999px, 89px, 0);
+  }
+  15% {
+    clip: rect(121px, 9999px, 6px, 0);
+  }
+  20% {
+    clip: rect(181px, 9999px, 99px, 0);
+  }
+  25% {
+    clip: rect(154px, 9999px, 133px, 0);
+  }
+  30% {
+    clip: rect(134px, 9999px, 169px, 0);
+  }
+  35% {
+    clip: rect(26px, 9999px, 187px, 0);
+  }
+  40% {
+    clip: rect(147px, 9999px, 137px, 0);
+  }
+  45% {
+    clip: rect(31px, 9999px, 52px, 0);
+  }
+  50% {
+    clip: rect(191px, 9999px, 109px, 0);
+  }
+  55% {
+    clip: rect(74px, 9999px, 54px, 0);
+  }
+  60% {
+    clip: rect(145px, 9999px, 75px, 0);
+  }
+  65% {
+    clip: rect(153px, 9999px, 198px, 0);
+  }
+  70% {
+    clip: rect(99px, 9999px, 136px, 0);
+  }
+  75% {
+    clip: rect(118px, 9999px, 192px, 0);
+  }
+  80% {
+    clip: rect(1px, 9999px, 83px, 0);
+  }
+  85% {
+    clip: rect(145px, 9999px, 98px, 0);
+  }
+  90% {
+    clip: rect(121px, 9999px, 154px, 0);
+  }
+  95% {
+    clip: rect(156px, 9999px, 44px, 0);
+  }
+  100% {
+    clip: rect(67px, 9999px, 122px, 0);
+  }
+}
+.theme-default {
+  position: relative;
+}
+.theme-default h1 {
+  padding: 20px 0;
+  font-family: "Honk";
+  font-size: 4rem;
+}
+.theme-default .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.theme-default .frame {
+  position: relative;
+}
+.theme-default .frame__content {
+  width: 800px;
+  height: 900px;
+  position: relative;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  animation: fadeInDown 500ms ease-out;
+}
+.theme-default .frame__content--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.theme-default .frame__content--logo {
+  position: relative;
+  width: 350px;
+  height: 80px;
+  left: 50%;
+  transform: translateX(-52%) scale(0.95);
+  top: 190px;
+}
+.theme-default .frame__content--wrapper {
+  gap: 10px;
+  left: 50%;
+  transform: translateX(-52%) scale(0.95);
+  position: relative;
+  width: 390px;
+  height: 390px;
+  top: 270px;
+}
+.theme-default .frame__content--wrapper:has(.history) {
+  width: 450px;
+}
+.theme-default .frame__content--wrapper .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 130px);
+  cursor: pointer;
+}
+.theme-default .frame__content--wrapper .grid:after {
+  content: attr(game-round);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -55px;
+  font-family: "Sora";
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgba(119, 61, 13, 0.4);
+  font-weight: 800;
+}
+.theme-default .frame__content--wrapper .grid span {
+  width: 130px;
+  height: 130px;
+  background: url(../images/panel.png) no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(1) {
+  animation-delay: 150ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(2) {
+  animation-delay: 300ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(3) {
+  animation-delay: 450ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(4) {
+  animation-delay: 600ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(5) {
+  animation-delay: 750ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(6) {
+  animation-delay: 900ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(7) {
+  animation-delay: 1050ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(8) {
+  animation-delay: 1200ms;
+}
+.theme-default .frame__content--wrapper .grid span:nth-child(9) {
+  animation-delay: 1350ms;
+}
+.theme-default .frame__content--wrapper .grid span img.mark {
+  width: calc(100% - 45px);
+  height: calc(100% - 45px);
+  animation: bounceIn 500ms ease-in-out;
+}
+.theme-default .frame__content--wrapper .grid span img.hover {
+  position: absolute;
+  width: calc(100% - 45px);
+  height: calc(100% - 45px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  visibility: hidden;
+}
+.theme-default .frame__content--wrapper .grid span.lost img.mark {
+  opacity: 0.5;
+}
+.theme-default .frame__content--wrapper .grid:hover span img.hover {
+  visibility: visible;
+}
+.theme-default .frame__content--wrapper .history__title {
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+  color: rgba(119, 61, 13, 0.5);
+  text-transform: uppercase;
+  margin-top: -25px;
+}
+.theme-default .frame__content--wrapper .history__title pre {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: rgba(119, 61, 13, 0.5);
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.theme-default .frame__content--wrapper .history__title pre:hover {
+  color: rgba(119, 61, 13, 0.7);
+}
+.theme-default .frame__content--wrapper .history ul {
+  overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.theme-default .frame__content--wrapper .history ul::-webkit-scrollbar {
+  width: 3px;
+}
+.theme-default .frame__content--wrapper .history ul::-webkit-scrollbar-track {
+  background: none;
+}
+.theme-default .frame__content--wrapper .history ul::-webkit-scrollbar-thumb {
+  background: rgba(119, 61, 13, 0.2);
+}
+.theme-default .frame__content--wrapper .history ul::-webkit-scrollbar-thumb:hover {
+  background: none;
+}
+.theme-default .frame__content--wrapper .history ul li {
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(119, 61, 13, 0.3);
+  cursor: pointer;
+}
+.theme-default .frame__content--wrapper .history ul li.no-data {
+  text-align: center;
+  margin-top: 70px;
+  color: rgba(119, 61, 13, 0.2);
+  text-transform: uppercase;
+  cursor: default;
+}
+.theme-default .frame__content--wrapper .history ul li.no-data:hover {
+  background: none;
+}
+.theme-default .frame__content--wrapper .history ul li:last-child {
+  border: none;
+}
+.theme-default .frame__content--wrapper .history ul li .grid {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+}
+.theme-default .frame__content--wrapper .history ul li .grid span {
+  width: 20px;
+  height: 20px;
+}
+.theme-default .frame__content--wrapper .history ul li .grid span img.mark {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+.theme-default .frame__content--wrapper .history ul li .game-info {
+  gap: 5px;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info {
+  gap: 5px;
+  height: inherit;
+  width: 120px;
+  padding: 3px 0 5px 0;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info div {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info div span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info.reverse {
+  flex-direction: row-reverse;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .player-info.reverse div {
+  text-align: right;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .game-status {
+  gap: 5px;
+  flex: 1;
+  height: inherit;
+  padding: 3px 0 5px 0;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .game-status__item {
+  gap: 10px;
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div {
+  font-size: 13px;
+  color: rgba(119, 61, 13, 0.7);
+}
+.theme-default .frame__content--wrapper .history ul li .game-info .game-status__item div span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+.theme-default .frame__content--wrapper .history ul li .round-wrapper {
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.theme-default .frame__content--wrapper .history ul li .round-info {
+  width: 21%;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  gap: 3px;
+}
+.theme-default .frame__content--wrapper .history ul li .round-info span {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+.theme-default .frame__content--wrapper .history ul li .round-info span:first-child {
+  color: rgba(0, 0, 0, 0.3);
+}
+.theme-default .frame__content--wrapper .btns {
+  gap: 10px;
+  margin-top: 50px;
+}
+.theme-default .frame__content--wrapper .btns button {
+  width: 300px;
+  padding: 30px 0;
+  background: url(../images/btn-bg.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+.theme-default .frame__content--wrapper .btns button:active {
+  transform: scale(0.97);
+}
+.theme-default .frame__content--footer {
+  gap: 5px;
+  width: 70%;
+  height: 55px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-51%);
+  top: 340px;
+}
+.theme-default .frame__content--footer .player-info {
+  gap: 5px;
+  height: inherit;
+  width: 150px;
+  padding: 3px 15px 5px 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(119, 61, 13, 0.5);
+}
+.theme-default .frame__content--footer .player-info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.theme-default .frame__content--footer .player-info div {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.theme-default .frame__content--footer .player-info div span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.theme-default .frame__content--footer .player-info.reverse {
+  flex-direction: row-reverse;
+}
+.theme-default .frame__content--footer .player-info.reverse div {
+  text-align: right;
+}
+.theme-default .frame__content--footer .game-status {
+  gap: 5px;
+  flex: 1;
+  height: inherit;
+  padding: 3px 15px 5px 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(119, 61, 13, 0.5);
+}
+.theme-default .frame__content--footer .game-status__item {
+  gap: 10px;
+}
+.theme-default .frame__content--footer .game-status__item div {
+  font-size: 15px;
+  color: rgba(255, 211, 0, 0.7);
+}
+.theme-default .frame__content--footer .game-status__item div span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.theme-default .popup {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+}
+.theme-default .popup__content {
+  width: 450px;
+  height: 500px;
+  position: relative;
+  animation: bounceIn 1000ms ease-in-out;
+}
+.theme-default .popup__content--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.theme-default .popup__content--title {
+  text-align: center;
+  font-size: 32px;
+  color: rgba(255, 211, 0, 0.5);
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 30px;
+  font-family: "Khand";
+}
+.theme-default .popup__content--name {
+  position: relative;
+  width: 70%;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 70px;
+  font-family: "Khand";
+  font-weight: 1000;
+  margin-bottom: 50px;
+}
+.theme-default .popup__content--name span {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: -20px;
+}
+.theme-default .popup__content--form {
+  gap: 15px;
+  width: 60%;
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.theme-default .popup__content--form span {
+  gap: 2px;
+}
+.theme-default .popup__content--form span label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.theme-default .popup__content--form span input {
+  width: inherit;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 10px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.theme-default .popup__content button {
+  position: relative;
+  width: 50%;
+  padding: 15px 0;
+  margin-top: 10px;
+  background: url(../images/btn-bg.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+.theme-default .popup__content button:active {
+  transform: scale(0.97);
+}
+.theme-default .popup__content button.disabled {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+.theme-default .popup__content button.disabled:active {
+  transform: scale(1);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,612 @@
+.theme-default {
+  @extend .container;
+  @extend .flex;
+  @extend .flex-column;
+
+  position: relative;
+
+  h1 {
+    @extend .full-width;
+
+    padding: 20px 0;
+    font-family: 'Honk';
+    font-size: 4rem;
+  }
+
+  .bg {
+    @extend .full-size;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .frame {
+    @extend .full-size;
+    position: relative;
+
+    &__content {
+      width: 800px;
+      height: 900px;
+      position: relative;
+      left: 50%;
+      top: -20px;
+      transform: translateX(-50%);
+      animation: fadeInDown 500ms ease-out;
+
+      &--bg {
+        @extend .full-size;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &--logo {
+        position: relative;
+        width: 350px;
+        height: 80px;
+        left: 50%;
+        transform: translateX(-52%) scale(.95);
+        top: 190px;
+      }
+
+      &--wrapper {
+        @extend .flex;
+        @extend .flex-column;
+
+        gap: 10px;
+        left: 50%;
+        transform: translateX(-52%) scale(.95);
+        position: relative;
+        width: 390px;
+        height: 390px;
+        top: 270px;
+
+        &:has(.history) {
+          width: 450px;
+        }
+
+        .grid {
+          @extend .full-width;
+
+          display: grid;
+          grid-template-columns: repeat(3, 130px);
+          cursor: pointer;
+
+          &:after {
+            content: attr(game-round);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -55px;
+            font-family: 'Sora';
+            font-size: 20px;
+            text-transform: uppercase;
+            color: rgba(#773d0d , .4);
+            font-weight: 800;
+          }
+          
+          span {
+            width: calc(390px / 3);
+            height: calc(390px / 3);
+            background: url(../images/panel.png) no-repeat;
+            background-size: 100% 100%;
+            display: grid;
+            place-items: center;
+            position: relative;
+            // animation: fadeInRight 300ms ease-in-out;
+
+            $delay: 150ms;
+            @for $i from 1 through 9 {
+              &:nth-child(#{$i}) {
+                animation-delay: $i * $delay;
+              }
+            }
+
+            img.mark {
+              width: calc(100% - 45px);
+              height: calc(100% - 45px);
+              animation: bounceIn 500ms ease-in-out;
+            }
+
+            img.hover {
+              position: absolute;
+              width: calc(100% - 45px);
+              height: calc(100% - 45px);
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: .3;
+              visibility: hidden;
+            }
+
+            &.lost {
+              img.mark {
+                opacity: .5;
+              }
+            }
+          }
+
+          &:hover {
+            span img.hover {
+              visibility: visible;
+            }
+          }
+        }
+
+        .history {
+          @extend .full-size;
+          @extend .flex;
+          @extend .flex-column;
+
+          &__title {
+            @extend .full-width;
+            @extend .font-family-bold;
+            
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            color: rgba(#773d0d, .5);
+            text-transform: uppercase;
+            margin-top: -25px;
+            
+            pre {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              color: rgba(#773d0d, .5);
+              cursor: pointer;
+              font-size: 14px;
+              text-transform: uppercase;
+
+              &:hover {
+                color: rgba(#773d0d, .7);
+              }
+            }
+          }
+
+          ul {
+            @extend .full-size;
+            
+            overflow: auto;
+            /* width */
+            &::-webkit-scrollbar {
+              width: 3px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+              background: none; 
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: rgba(#773d0d, .2);
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: none; 
+            }
+
+            li {
+              padding: 5px 10px;
+              border-bottom: 1px solid rgba(#773d0d, .3);
+              cursor: pointer;
+
+              &.no-data {
+                @extend .font-family-bold;
+
+                text-align: center;
+                margin-top: 70px;
+                color: rgba(#773d0d, .2);
+                text-transform: uppercase;
+                cursor: default;
+
+                &:hover {
+                  background: none;
+                }
+              }
+
+              &:last-child {
+                border: none;
+              }
+
+              .grid {
+                width: 60px;
+                height: 60px;
+                display: grid;
+                grid-template-columns: repeat(3, 20px);
+
+                span {
+                  width: 20px;
+                  height: 20px;
+
+                  img.mark {
+                    width: calc(100% - 6px);
+                    height: calc(100% - 6px);
+                  }
+                }
+              }
+
+              .game-info {
+                @extend .full-width;
+                @extend .flex;
+                @extend .flex-jc-sb;
+
+                gap: 5px;
+
+                &:hover {
+                  background: rgba(#000, .05);
+                }
+
+                .player-info {
+                  @extend .flex;
+                  @extend .flex-ai-c;
+        
+                  gap: 5px;
+                  height: inherit;
+                  width: 120px;
+                  padding: 3px 0 5px 0;
+        
+                  img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                  }
+        
+                  div {
+                    @extend .bold;
+                    @extend .flex;
+                    @extend .flex-column;
+        
+                    font-size: 13px;
+                    color: rgba(#000, .7);
+        
+                    span {
+                      font-size: 10px;
+                      text-transform: uppercase;
+                      color: rgba(#000, .5);
+                      font-weight: 500;
+                    }
+                  }
+        
+                  &.reverse {
+                    flex-direction: row-reverse;
+        
+                    div {
+                      text-align: right;
+                    }
+                  }
+                }
+
+                .game-status {
+                  @extend .flex;
+                  @extend .flex-ai-c;
+                  @extend .flex-jc-sb;
+                  
+                  gap: 5px;
+                  flex: 1;
+                  height: inherit;
+                  padding: 3px 0 5px 0;
+        
+                  &__item {
+                    @extend .flex;
+        
+                    gap: 10px;
+        
+                    div {
+                      @extend .bold;
+                      @extend .flex;
+                      @extend .flex-column;
+                      @extend .flex-ai-c;
+        
+                      font-size: 13px;
+                      color: rgba(#773d0d, .7);
+        
+                      span {
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        color: rgba(#000, .5);
+                        font-weight: 500;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .round-wrapper {
+                @extend .full-width;
+                @extend .flex;
+                // @extend .flex-jc-c;
+
+                gap: 5px;
+                flex-wrap: wrap;
+              }
+
+              .round-info {
+                @extend .full-width;
+                @extend .flex;
+                @extend .flex-column;
+                @extend .flex-ai-c;
+                @extend .flex-jc-sb;
+
+                width: 21%;
+                padding: 5px;
+                border: 1px solid rgba(#000, .1);
+                border-radius: 5px;
+                gap: 3px;
+
+                span {
+                  @extend .font-family-bold;
+
+                  font-size: 10px;
+                  color: rgba(#000, .5);
+                  text-transform: uppercase;
+
+                  &:first-child {
+                    color: rgba(#000, .3);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .btns {
+          @extend .full-width;
+          @extend .flex;
+          @extend .flex-column;
+          @extend .flex-ai-c;
+
+          gap: 10px;
+          margin-top: 50px;
+
+          button {
+            @extend .font-family-bold;
+
+            width: 300px;
+            padding: 30px 0;
+            background: url(../images/btn-bg.png) no-repeat;
+            background-size: 100% 100%;
+            font-size: 22px;
+            text-transform: uppercase;
+            color: rgba(#fff, .8);
+            cursor: pointer;
+
+            &:active {
+              transform: scale(.97);
+            }
+          }
+        }
+      }
+
+      &--footer {
+        @extend .flex;
+        @extend .flex-jc-sb;
+
+        gap: 5px;
+        width: 70%;
+        height: 55px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-51%);
+        top: 340px;
+
+        .player-info {
+          @extend .flex;
+          @extend .flex-ai-c;
+
+          gap: 5px;
+          height: inherit;
+          width: 150px;
+          padding: 3px 15px 5px 15px;
+          background:  rgba(0,0,0,.1);
+          border-radius: 25px;
+          box-shadow: inset 5px 5px 10px rgba(0,0,0,.2);
+          border: 2px solid rgba(#773d0d, .5);
+
+          img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+          }
+
+          div {
+            @extend .bold;
+            @extend .flex;
+            @extend .flex-column;
+
+            font-size: 15px;
+            color: rgba(#fff, .7);
+
+            span {
+              font-size: 10px;
+              text-transform: uppercase;
+              color: rgba(#fff, .5);
+              font-weight: 500;
+            }
+          }
+
+          &.reverse {
+            flex-direction: row-reverse;
+
+            div {
+              text-align: right;
+            }
+          }
+        }
+
+        .game-status {
+          @extend .flex;
+          @extend .flex-ai-c;
+          @extend .flex-jc-sb;
+          
+          gap: 5px;
+          flex: 1;
+          height: inherit;
+          padding: 3px 15px 5px 15px;
+          background:  rgba(0,0,0,.1);
+          border-radius: 25px;
+          box-shadow: inset 5px 5px 10px rgba(0,0,0,.2);
+          border: 2px solid rgba(#773d0d, .5);
+
+          &__item {
+            @extend .flex;
+
+            gap: 10px;
+
+            div {
+              @extend .bold;
+              @extend .flex;
+              @extend .flex-column;
+              @extend .flex-ai-c;
+
+              font-size: 15px;
+              color: rgba(#ffd300, .7);
+
+              span {
+                font-size: 10px;
+                text-transform: uppercase;
+                color: rgba(#fff, .5);
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popup {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.8);
+    display: grid;
+    place-items: center;
+
+    &__content {
+      @extend .flex;
+      @extend .flex-column;
+      @extend .flex-ai-c;
+
+      width: 450px;
+      height: 500px;
+      position: relative;
+      animation: bounceIn 1000ms ease-in-out;
+
+      &--bg {
+        @extend .full-size;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &--title {
+        @extend .full-width;
+        @extend .font-family-bold;
+
+        text-align: center;
+        font-size: 32px;
+        color: rgba(#ffd300, .5);
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 30px;
+        font-family: 'Khand';
+      }
+
+      &--name {
+        @extend .flex;
+        @extend .flex-column;
+        @extend .flex-ai-c;
+
+        position: relative;
+        width: 70%;
+        font-size: 50px;
+        color: rgba(#fff, .7);
+        margin-top: 70px;
+        font-family: 'Khand';
+        font-weight: 1000;
+        margin-bottom: 50px;
+
+        span {
+          color: rgba(#fff, .3);
+          font-size: 30px;
+          text-transform: uppercase;
+          margin-top: -20px;
+        }
+      }
+
+      &--form {
+        @extend .flex;
+        @extend .flex-column;
+
+        gap: 15px;
+        width: 60%;
+        position: relative;
+        margin-top: 80px;
+        margin-bottom: 50px;
+
+        span {
+          @extend .flex;
+          @extend .flex-column;
+          @extend .full-width;
+
+          gap: 2px;
+
+          label {
+            @extend .font-family-bold;
+
+            color: rgba(#fff, .5);
+            font-size: 15px;
+            text-transform: uppercase;
+          }
+
+          input {
+            @extend .font-family-bold;
+
+            width: inherit;
+            height: 50px;
+            color: rgba(#fff, .8);
+            padding: 0 10px;
+            font-size: 20px;
+            background: rgba(#000, .3);
+            box-shadow: inset 3px 3px 5px rgba(#000,.2);
+          }
+        }
+      }
+
+      button {
+        @extend .font-family-bold;
+
+        position: relative;
+        width: 50%;
+        padding: 15px 0;
+        margin-top: 10px;
+        background: url(../images/btn-bg.png) no-repeat;
+        background-size: 100% 100%;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: rgba(#fff, .8);
+        cursor: pointer;
+
+        &:active {
+          transform: scale(.97);
+        }
+
+        &.disabled {
+          cursor: no-drop;
+          opacity: .5;
+
+          &:active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
