@@ -34,6 +34,10 @@
       transform: translateX(-50%);
       animation: fadeInDown 500ms ease-out;
 
+      @include breakpoint-device(mobile) {
+        width: 100%;
+      }
+
       &--bg {
         @extend .full-size;
 
@@ -49,6 +53,12 @@
         left: 50%;
         transform: translateX(-52%) scale(.95);
         top: 190px;
+
+        @include breakpoint-device(mobile) {
+          width: 300px;
+          height: 70px;
+          top: 195px;
+        }
       }
 
       &--wrapper {
