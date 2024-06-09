@@ -77,8 +77,8 @@ export default () => {
       meta.SET_PLAYERS_NAME(['', ''])
     },
 
-    stopGame (gridItems) {
-      meta.resetGame()
+    async stopGame (gridItems) {
+      await meta.resetGame()
       meta.SET_SELECTED_MARKS(Array(9).fill(''))
       meta.SET_START_GAME(false)
       gridItems.current.forEach(item => {
