@@ -8,12 +8,19 @@ function History () {
   const { metaStates, metaMutations, metaActions } = window.$reduxMeta.useMeta()
 
   const meta = {
-    ...metaStates('app', ['history']),
-    ...metaMutations('app', ['SET_SHOW_HISTORY']),
+    ...metaStates('app', [
+      'history',
+      'history_loaded'
+    ]),
+    ...metaMutations('app', [
+      'SET_SHOW_HISTORY',
+      'SET_HISTORY_LOADED'
+    ]),
     ...metaActions('app', ['getHistory'])
   }
 
   useEffect(() => {
+    meta.SET_HISTORY_LOADED(false)
     meta.getHistory()
   }, [])
 
@@ -112,7 +119,7 @@ function History () {
                   </li>
                 )
               })
-              : <li className="no-data">no recent games</li>
+              : <li className="no-data">{ meta.history_loaded ? 'no recent games' : 'fetching recent games...' }</li>
           }
           
         </ul>

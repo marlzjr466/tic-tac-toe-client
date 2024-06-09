@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ReduxMeta, ReduxMetaProvider } from '@opensource-dev/redux-meta'
+import { ReduxMeta, Provider } from '@package/redux-meta'
 
 // css
 import '@assets/css/style.css'
@@ -19,8 +19,8 @@ window.$reduxMeta = reduxMeta
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ReduxMetaProvider>
+    <Provider store={reduxMeta.useStore()}>
       <App />
-    </ReduxMetaProvider>
+    </Provider>
   </React.StrictMode>,
 )

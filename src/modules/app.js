@@ -13,6 +13,7 @@ export default () => ({
     show_players_modal: false,
     game_info: [],
     history: [],
+    history_loaded: false,
     show_history: false,
     players_name: ['', ''],
     game: {
@@ -91,6 +92,10 @@ export default () => ({
 
     SET_PLAYERS_NAME: (state, { payload }) => {
       state.players_name = payload
+    },
+
+    SET_HISTORY_LOADED: (state, { payload }) => {
+      state.history_loaded = payload
     }
   },
 
@@ -186,6 +191,7 @@ export default () => ({
       try {
         const res = await baseApi.get('/tic-tac-toe')
         commit('SET_HISTORY', res.data.reverse())
+        commit('SET_HISTORY_LOADED', true)
       } catch (error) {
         console.log('getHistory error:', error)
         throw error
