@@ -124,9 +124,7 @@ export default () => ({
       game.players[loseIndex].win = state.game.players[loseIndex].win
 
       try {
-        console.log('save to databse:', game)
-        const res = await baseApi.post('/tic-tac-toe', game)
-        console.log('res --->', res)
+        await baseApi.post('/tic-tac-toe', game)
 
         const defaultData = {
           round: 1,

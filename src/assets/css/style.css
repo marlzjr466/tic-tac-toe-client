@@ -596,6 +596,7 @@ ul, ol {
 .theme-default .frame__content--wrapper .history ul li .game-info .player-info div {
   font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
+  text-transform: capitalize;
 }
 .theme-default .frame__content--wrapper .history ul li .game-info .player-info div span {
   font-size: 10px;
@@ -691,6 +692,7 @@ ul, ol {
 .theme-default .frame__content--footer .player-info div {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.7);
+  text-transform: capitalize;
 }
 .theme-default .frame__content--footer .player-info div span {
   font-size: 10px;
@@ -764,6 +766,7 @@ ul, ol {
   font-family: "Khand";
   font-weight: 1000;
   margin-bottom: 50px;
+  text-transform: capitalize;
 }
 .theme-default .popup__content--name span {
   color: rgba(255, 255, 255, 0.3);

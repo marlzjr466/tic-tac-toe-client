@@ -1,17 +1,13 @@
 import { configureStore, combineReducers, createSlice } from '@reduxjs/toolkit'
 import { Provider, useDispatch, useSelector } from 'react-redux'
 
-var store = null
 class ReduxMeta {
   constructor () {
     this.slice = {}
     this.reducers = {}
     this.actions = {}
     this.getters = {}
-  }
-
-  useStore () {
-    return store
+    this.store = null
   }
 
   useModules (modules) {
@@ -53,7 +49,7 @@ class ReduxMeta {
     }
 
     // initialize store
-    store = configureStore({
+    this.store = configureStore({
       reducer: combineReducers(this.reducers)
     })
   }
@@ -243,7 +239,8 @@ class ReduxMeta {
   }
 }
 
+const ReduxMetaProvider = Provider
 export {
-  Provider,
-  ReduxMeta
+  ReduxMeta,
+  ReduxMetaProvider
 }
