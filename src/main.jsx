@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ReduxMeta, ReduxMetaProvider } from '@package/redux-meta'
+import { ReduxMeta, ReduxMetaProvider } from '@opensource-dev/redux-meta'
 
 // css
 import '@assets/css/style.css'
